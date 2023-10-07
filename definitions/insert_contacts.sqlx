@@ -1,0 +1,12 @@
+
+
+INSERT INTO ${ref("contacts")} (
+  id, name, email
+)
+SELECT
+  id, name, email
+FROM
+    kheopsys-data-lab.dataform.test
+WHERE
+  id NOT IN (SELECT id FROM ${ref("contacts")});
+SELECT * FROM ${ref("contacts")}

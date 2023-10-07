@@ -1,0 +1,13 @@
+{
+  "defaultSchema": "dataform",
+  "assertionSchema": "dataform_assertions",
+  "warehouse": "bigquery",
+  "defaultDatabase": "kheopsys-data-lab",
+  "defaultLocation": "EU",
+
+  "projectConfig": {
+    "dependencies": ["@dataform/gcs"]
+  }
+
+}
+    

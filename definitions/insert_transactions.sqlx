@@ -1,0 +1,11 @@
+
+INSERT INTO ${ref("transactions")} (
+  id, id_transaction
+)
+SELECT
+   id, id_transaction
+FROM
+    kheopsys-data-lab.dataform.test_transactions
+WHERE
+  id NOT IN (SELECT id FROM ${ref("transactions")});
+SELECT * FROM ${ref("transactions")}
