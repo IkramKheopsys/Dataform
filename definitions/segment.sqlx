@@ -1,3 +1,11 @@
+
+config {
+  type: "table",
+  assertions: {
+    uniqueKey: ["client"],
+    nonNull: ["client", "category"],
+  }
+}
 CREATE TABLE IF NOT EXISTS kheopsys-data-lab.dataform.segment (
     client INT64,
     category STRING

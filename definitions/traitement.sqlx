@@ -1,9 +1,11 @@
-config { type: "view" }
+
+
 
 INSERT INTO ${ref("segment")}(client, category)
 SELECT id as client, 
        CASE WHEN COUNT(*) = 1 THEN 'XL' ELSE 'M' END as category
-FROM `dataform.transactions`
+FROM ${ref("transactions")}
 GROUP BY id, id_transaction
+
 
     
