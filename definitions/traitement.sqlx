@@ -1,14 +1,9 @@
 config { type: "view" }
 
-WITH transaction_counts AS (
-  SELECT id_transaction, id as client, COUNT(*) as transaction_count
-  FROM `dataform.transactions`
-  GROUP BY id, id_transaction
-)
+INSERT INTO ${ref("segment")}(client, category)
+SELECT id as client, 
+       CASE WHEN COUNT(*) = 1 THEN 'XL' ELSE 'M' END as category
+FROM `dataform.transactions`
+GROUP BY id, id_transaction
 
--- Catégorisation des clients et insertion dans la table "segment".
-INSERT INTO ${ref("segment")} (client, category)
-SELECT client, CASE WHEN transaction_count = 1 THEN 'XL' ELSE 'M' END as category
-FROM transaction_counts
-
-SELECT * from ${ref("segment")}
+    
