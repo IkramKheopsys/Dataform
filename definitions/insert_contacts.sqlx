@@ -1,12 +1,16 @@
-
-
+config { type: "table",
+  assertions: {
+    uniqueKey: ["id"],
+    nonNull: ["name", "email"]
+    }
+}
 INSERT INTO ${ref("contacts")} (
   id, name, email
 )
 SELECT
   id, name, email
 FROM
-    kheopsys-data-lab.dataform.test
+    kheopsys-data-lab.dataform.test_contact
 WHERE
   id NOT IN (SELECT id FROM ${ref("contacts")});
 SELECT * FROM ${ref("contacts")}
