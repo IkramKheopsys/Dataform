@@ -1,5 +1,7 @@
 config { type: "table"}
-CREATE TABLE IF NOT EXISTS kheopsys-data-lab.dataform.segment (
+
+CREATE TABLE IF NOT EXISTS dataform.segment (
     client INT64,
     category STRING
 )
+
