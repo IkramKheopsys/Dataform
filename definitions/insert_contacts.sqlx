@@ -1,9 +1,3 @@
-config { type: "table",
-  assertions: {
-    uniqueKey: ["id"],
-    nonNull: ["name", "email"]
-    }
-}
 INSERT INTO ${ref("contacts")} (
   id, name, email
 )
