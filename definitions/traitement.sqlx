@@ -1,3 +1,5 @@
+config { type: "view" }
+
 WITH transaction_counts AS (
   SELECT id_transaction, id as client, COUNT(*) as transaction_count
   FROM `dataform.transactions`
@@ -9,3 +11,4 @@ INSERT INTO ${ref("segment")} (client, category)
 SELECT client, CASE WHEN transaction_count = 1 THEN 'XL' ELSE 'M' END as category
 FROM transaction_counts
 
+SELECT * from ${ref("segment")}

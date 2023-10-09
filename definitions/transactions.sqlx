@@ -6,5 +6,5 @@ CREATE TABLE  IF NOT EXISTS dataform.transactions(
   -- Définissez votre schéma de table ici.
   id_transaction INT64,
   id INT64,
- 
+
 )
