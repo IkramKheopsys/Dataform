@@ -1,5 +1,6 @@
 -- Config block pour créer une table.
-config { type: "table" }
+--config { type: "table" }
+config { type: "operations", hasOutput: true }
 
 -- Si la table n'existe pas, elle sera créée.
 CREATE TABLE  IF NOT EXISTS dataform.transactions(

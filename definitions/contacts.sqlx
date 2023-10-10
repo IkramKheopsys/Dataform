@@ -1,13 +1,11 @@
 -- Config block pour créer une table.
-config { type: "table" }
+config { type: "operations", hasOutput: true }
 
 
 -- Si la table n'existe pas, elle sera créée.
---CREATE TABLE IF NOT EXISTS dataform.contacts(
+CREATE TABLE IF NOT EXISTS dataform.contacts(
   -- Définissez votre schéma de table ici.
-  --id INT64,
-  --name STRING,
-  --email STRING
---)
-SELECT * FROM
- kheopsys-data-lab.dataform.test_contact
+  id INT64,
+  name STRING,
+  email STRING
+)

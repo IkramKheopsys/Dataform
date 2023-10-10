@@ -1,5 +1,5 @@
-config { type: "table"}
-
+--config { type: "table"}
+config { type: "operations", hasOutput: true }
 CREATE TABLE IF NOT EXISTS dataform.segment (
     client INT64,
     category STRING
