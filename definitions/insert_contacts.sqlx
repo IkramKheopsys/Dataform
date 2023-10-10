@@ -1,5 +1,4 @@
 
-
 INSERT INTO ${ref("contacts")} (
   id, name, email
 )
