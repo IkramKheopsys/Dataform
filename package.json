@@ -1,0 +1,6 @@
+{
+  "name": "transactions-pipelines",
+  "dependencies": {
+    "@dataform/core": "2.4.2"
+  }
+}
